@@ -1,16 +1,30 @@
 @import url('reset.css');
+@import url('header-footer.css');
 
 /*---- variables ----*/
 :root {
     --font-title: 'Rye', cursive;
-    --font-text: 'Merriweather', serif;
+    --font-text: 'Merriweather', sans-serif;
+    --font-color-text: #ffeede;
 }
 
-.rye-regular {
+/* .rye-regular {
   font-family: "Rye", serif;
   font-weight: 400;
   font-style: normal;
-}
-
+} */
 
 /* Base styles */
+button {
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+body {
+    font-family: var(--font-text);
+}
+
+a {
+    text-decoration: none;
+}
