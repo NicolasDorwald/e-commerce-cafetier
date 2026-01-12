@@ -1,0 +1,16 @@
+@import url('reset.css');
+
+/*---- variables ----*/
+:root {
+    --font-title: 'Rye', cursive;
+    --font-text: 'Merriweather', serif;
+}
+
+.rye-regular {
+  font-family: "Rye", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+/* Base styles */
