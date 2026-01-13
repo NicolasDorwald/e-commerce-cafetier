@@ -66,19 +66,16 @@ h2 {
 .link-catalog, .contact-btn {
     display: flex;
     align-items: center;
-    justify-content: center;
-    
+    justify-content: center;  
     width: 180px;
-    height: 50px;
-    
+    height: 50px;  
     padding: 0;               /* reset padding par défaut */
     border: 1px solid #d5935d;
     background-color: rgba(57, 26, 1, 0.674);
     text-decoration: none;
     border-radius: 5px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-    text-align: center;
-    
+    text-align: center;  
     font: inherit;            /* reprend la police du parent */
     line-height: normal;      /* reset */
     cursor: pointer;          /* comme un lien */
@@ -92,9 +89,7 @@ h2 {
     transform: translateY(-2px);
 }
 
-
 /*---- h3 ----*/
-
 h3.decorated {
     font-family: var(--font-title);
     display: flex;
@@ -134,48 +129,75 @@ h3.decorated::after {
         rgba(111, 78, 55, 0)
     );
 }
+
 /*----- section random ----*/
 .random-products {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     margin: 1rem;
     gap: 2rem;
-    padding: 1rem; 
-    align-items: stretch; /* toutes les cartes à la même hauteur */
+    padding: 1rem;
 }
 
+/*----- cartes produits ----*/
 .product {
     background-color: #fdeded;
     border-radius: 4px;
-    overflow: hidden;           /* IMPORTANT */
+    overflow: hidden;
     box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* pousse le bouton en bas */
-        height: 100%;     
+
+    display: grid;
+    grid-template-rows: auto 1fr auto; /* image / contenu / bouton */
+    height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .product:hover {
     transform: translateY(-6px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.18);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.18);
 }
 
-h4 {
-    margin: 0 1rem 0 1rem;
+/* image */
+.product-image img {
+    width: 100%;
+    display: block;
+    padding: 1rem;
+}
+
+/* contenu (titre + description) */
+.product-content {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* contenu en haut du bloc */
     text-align: center;
-    padding: .8rem .8rem;
+}
+
+.product-content h4 {
+    margin: 0 0 0.5rem 0;
+    padding-bottom: 0.5rem;
     border-bottom: 1px solid var(--font-color-brown);
 }
 
-.product-content > p {
+.product-content p {
+    margin: 0.5rem 0 0 0;
     color: var(--font-color-brown);
-    margin: 0 1rem 0 1rem;
-    padding: .8rem .8rem;
-    text-align: center;
-    border-bottom: 1px solid var(--font-color-brown);
 }
 
+/* bouton */
 .product .btn-link {
+    justify-self: center; /* centre horizontal */
+    align-self: end;      /* colle le bouton en bas */
+    margin: 16px 0;
     display: inline-block;
-    margin: 16px auto 16px auto; /* centre horizontal, espace top/bottom */
+    padding: 8px 16px;
+    background-color: var(--font-color-brown);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.product .btn-link:hover {
+    background-color: #a0522d; /* un peu plus foncé au hover */
 }
