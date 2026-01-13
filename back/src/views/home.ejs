@@ -1,48 +1,41 @@
 <%- include('partials/header') %>
 <main>
     <section class="home-presentation">
-        <h2>Ambiance de la boutique</h2>
+        <img src="/images/cup-table-2.png" class="background-img" alt="">
         <div class="description">
-            <article class="home">                
-                <p>Bienvenue dans notre boutique, un lieu chaleureux où les arômes 
-                    de <em>café</em> fraîchement moulu éveillent vos sens. L'ambiance, 
-                    éclairée de lumières tamisées et décorée d'éléments rustiques, 
-                    crée une atmosphère apaisante. Les étagères en bois présentent 
-                    des grains de café du monde entier, invitant à une exploration 
-                    sensorielle.</p>
-                <p>Les tasses et cuillères s'entrechoquent, et le son des machines 
-                    à expresso souligne l'expertise derrière chaque tasse. Des 
-                    fauteuils confortables invitent à la détente, tandis que l'odeur 
-                    du café infusé flotte dans l'air, créant un cadre propice à la 
-                    relaxation.</p>
-                <p>Notre équipe, passionnée et attentionnée, est toujours prête à 
-                    partager ses conseils, transformant chaque visite en une 
-                    expérience unique. Venez savourer un moment de tranquillité, 
-                    découvrir de nouvelles saveurs et profiter d'un voyage sensoriel 
-                    inoubliable.</p>
-                <div class="link-catalogue">
-                    <a href="/catalogue" class="btn-link">Voir le catalogue</a>
-                </div>
-            </article>
-            <div class="right">
-                <img class="home-img" src="/images/about.jpg" alt="Logo de la boutique O'Coffee">                    
-            </div>
+            <h2>Le meilleur du café torréfié</h2>
+            <p>Découvrez notre sélection exclusive de cafés 
+                torréfiés, soigneusement choisis pour satisfaire 
+                les palais les plus exigeants. </p>
+            <a href="/catalog" class="link-catalog">Voir le catalogue</a>
         </div>
     </section>
     <section class="news">
         <div class="new-products--list">
-    <% if (randomCoffees.length === 0) { %>
-    <p>Aucun café disponible pour le moment.</p>
-    <% } else { %>
-            <% randomCoffees.forEach(coffee => { %>
-                <article class="new-product">
-                    <h4><%= coffee.name %></h4>
-                    <p><%= coffee.description %></p>
-                    <img src="/images/coffees/<%= coffee.reference %>.png" alt="Café <%= coffee.name %>">
-                    <a href="/article/<%= coffee.id %>" class="btn-link">Découvrir</a>
-                </article>
-            <% }); %>
-    <% } %>
+            <h3 class="decorated">Nos cafés</h3>
+            <p>Découvrez notre sélection de cafés</p>
+        </div>
+        <div class="random-products">
+            <% if (randomCoffees.length === 0) { %>
+            <p>Aucun café disponible pour le moment.</p>
+            <% } else { %>
+                <% randomCoffees.forEach(coffee => { %>
+                    <article class="product">
+                        <div class="product-image">
+                            <img src="/images/coffees/<%= coffee.reference %>.png"
+                                alt="Café <%= coffee.name %>">
+                        </div>
+
+                        <div class="product-content">
+                            <h4><%= coffee.name %></h4>
+                            <p><%= coffee.description %></p>
+                        </div>
+                        
+                        <a href="/article/<%= coffee.id %>" class="btn-link">Découvrir</a>
+                        
+                    </article>
+                <% }); %>
+            <% } %>
         </div>
     </section>
 </main>
