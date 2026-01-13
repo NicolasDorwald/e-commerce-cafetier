@@ -1,0 +1,65 @@
+.contact-form {
+    position: relative;       /* pour l'image en fond */
+    display: flex;
+    align-items: center;      /* centre verticalement le formulaire */
+    justify-content: flex-start; /* formulaire à gauche */
+    padding: 2rem 3rem;
+    color: #fff;
+    overflow: hidden;
+    background-color: #3d2616; /* fallback si l'image met du temps à charger */
+}
+
+/* image de fond */
+.contact-form .cup-table {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+/* formulaire devant l'image */
+.contact-form form {
+    position: relative;
+    z-index: 1;              
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background: rgba(0,0,0,0.5); 
+    padding: 1rem;
+    border-radius: 5px;
+
+    /* alignement vertical pour rester centré dans la section */
+    margin-top: 0;  /* reset si margin interne */
+}
+
+/* chaque groupe label + champ */
+.contact-form form > div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.contact-form form input,
+.contact-form form textarea {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+/* bouton */
+.contact-form form button {
+    align-self: center;
+
+    color: #fff;
+    /* font-weight: bold; */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+

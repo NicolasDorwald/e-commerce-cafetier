@@ -1,20 +1,28 @@
 @import url('reset.css');
 @import url('header-footer.css');
+@import url('home.css');
+@import url('company.css');
+@import url('contact.css');
 
 /*---- variables ----*/
 :root {
     --font-title: 'Rye', cursive;
-    --font-text: 'Merriweather', sans-serif;
+    --font-text: "Crimson Pro", serif;
     --font-color-text: #ffeede;
+    --font-color-brown: #3d2616;
 }
 
-/* .rye-regular {
-  font-family: "Rye", serif;
-  font-weight: 400;
-  font-style: normal;
-} */
-
 /* Base styles */
+.border {
+    max-width: 80%;
+    margin: auto;
+    background-color: rgba(255, 231, 215, 0.511);
+}
+
+h1 , a , .panier , h2 {
+    color: #ffeede;
+}
+
 button {
     cursor: pointer;
     background: none;
@@ -23,8 +31,25 @@ button {
 
 body {
     font-family: var(--font-text);
+    background-color: rgb(254, 246, 215);
 }
 
 a {
     text-decoration: none;
+}
+
+.modal {
+    display: none;
+}
+
+h3 , h4 {
+    color: var(--font-color-brown)
+}
+
+h3 {
+    margin-bottom: 1rem;
+}
+
+p {
+    font-size: 1rem;
 }
