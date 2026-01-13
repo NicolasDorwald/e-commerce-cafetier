@@ -15,6 +15,9 @@ router.get("/article/:id", mainController.getOneCoffee);
 router.get("/contact", (req, res) => {
     res.render("contact");});
 
+router.get("/legals", (req, res) => {
+    res.render("legals");});
+
 // router.post('/contact', (req, res) => {
 //     récupérer req.body et envoyer un email en local, Formspree fait le job mantenant
 // });

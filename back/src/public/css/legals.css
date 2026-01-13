@@ -1,0 +1,27 @@
+.cgv-content , .legals-content , .politics-content {
+    max-width: 800px;
+    margin: auto;
+    padding: 1rem;
+    gap: 15px;
+}
+
+.edit h4 , .hebergement h4 , .politics-content h4 {
+    border: none;
+    text-align: left;
+}
+
+.legals-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: auto;
+}
+
+.edit , .hebergement {
+    width: 50%;
+    padding: 0;
+}
+
+.cgv-content strong {
+    margin-left: 2rem;
+}
