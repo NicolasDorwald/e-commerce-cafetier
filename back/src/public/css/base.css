@@ -4,6 +4,7 @@
 @import url('company.css');
 @import url('contact.css');
 @import url('catalog.css');
+@import url('legals.css');
 
 /*---- variables ----*/
 :root {
@@ -37,10 +38,6 @@ body {
 
 a {
     text-decoration: none;
-}
-
-.modal {
-    display: none;
 }
 
 h3 , h4 {
