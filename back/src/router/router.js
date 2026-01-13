@@ -8,7 +8,7 @@ router.get("/", mainController.getRandomCoffees);
 router.get("/catalog", mainController.getCoffeesList);  
 
 router.get("/company", (req, res) => {
-    res.render("entreprise");});
+    res.render("company");});
 
 router.get("/article/:id", mainController.getOneCoffee);
 

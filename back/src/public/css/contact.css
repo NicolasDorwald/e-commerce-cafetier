@@ -57,9 +57,14 @@
 /* bouton */
 .contact-form form button {
     align-self: center;
-
     color: #fff;
-    /* font-weight: bold; */
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
+#form-message {
+  display: block;
+  margin-top: 20px;
+  padding: 10px;
+  background: var(--font-color-brown);
+  color: var(--font-color-text);
+}
