@@ -2,7 +2,7 @@
 
     <section class="contact-form">
         <img src="/images/cup-table.png" class="cup-table" alt="">
-        <form action="https://formspree.io/f/mzddpwgd" method="POST">
+        <form id="contact-form" action="https://formspree.io/f/mzddpwgd" method="POST">
             <input type="hidden" name="_csrf" value="<%= csrfToken %>">
             <div>
                 <label for="name">Nom</label>
@@ -17,7 +17,9 @@
                 <textarea id="message" name="message" rows="5" required></textarea>
             </div>
             <button type="submit" class="contact-btn">Envoyer</button>
+            <p id="form-message"></p>
         </form>
+        
     </section>
     
 <%- include('partials/footer') %>
