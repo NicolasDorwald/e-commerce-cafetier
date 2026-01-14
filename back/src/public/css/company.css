@@ -1,8 +1,0 @@
-.company , .skills {
-    display: flex;
-    flex-direction: column;
-    gap: .5rem;
-    padding: 1rem;
-    width: 80%;
-    margin: auto;
-}

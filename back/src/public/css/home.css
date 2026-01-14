@@ -17,7 +17,7 @@
 .home-presentation .description {
     position: relative;
     z-index: 1;        /* texte au-dessus de l'image */
-    max-width: 50%;    /* texte limité à gauche */
+    max-width: 70%;    /* texte limité à gauche */
 }
 
 .home-presentation::before {
@@ -41,7 +41,7 @@
 }
 
 .description > p {
-    width: 80%;
+    width: 70%;
     margin-bottom: 1rem;
     color: var(--font-color-text);
 }
