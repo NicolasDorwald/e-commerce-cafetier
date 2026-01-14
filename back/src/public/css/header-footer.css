@@ -23,6 +23,7 @@ header::after {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    align-items: center;
 }
 
 h1 {
@@ -36,15 +37,19 @@ h1 {
 .nav--links {
     display: flex;
     justify-content: space-around;
-    gap: 10px;
+    gap: 15px;
+    height: 40px;           /* hauteur fixe */
+    align-items: center;    /* centre les liens verticalement */
 }
 
 .nav--links > a , .panier {
-    width: 80px;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 5px 10px;
+    border: 1px solid var(--font-color-text);
+    border-radius: 5px;
 }
 
 /*----- footer -----*/
