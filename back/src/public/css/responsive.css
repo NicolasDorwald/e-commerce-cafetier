@@ -32,4 +32,11 @@
     .contact-form {
         padding: 1rem;
     }
+/*----- home-presentation-----*/
+
+
+/*----- section random -----*/
+    .random-products {
+        grid-template-columns: 1fr; /* une seule colonne */
+    }
 }
