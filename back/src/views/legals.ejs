@@ -1,4 +1,5 @@
 <%- include('partials/header') %>
+<main class="legals-page">
     <!-- cgv -->
     <section id="cgv" class="cgv">
         <div class="cgv-content">
@@ -46,21 +47,22 @@
         <h3 class="decorated">Mentions légales</h3>
         <div class="legals-content">
             <div class="edit">
-                <h4>1. Éditeur du site</h4>
-                    <p>Le site www.nomdusite.com est édité par :</p>
-                    <p>an et Jacques Pepper, entrepreneurs.</p>
-                    <p>Adresse : 123 Rue du Café, 75001 Paris, France.</p>
-                    <p>Numéro de téléphone : 01 23 45 67 89</p>
-                    <p>Email : contact@nomdusite.com</p>
-                    <p>Responsable de la publication : Jean Pepper</p>
+                <ul class="list"><strong>1. Éditeur du site</strong>
+                    <li>Le site www.nomdusite.com est édité par : Nicolas Dorwald</li>
+                    <li>Adresse : 123 Rue du Café, 75001 Paris, France.</li>
+                    <li>Numéro de téléphone : 01 23 45 67 89</li>
+                    <li>Email : contact@nomdusite.com</li>
+                    <li>Responsable de la publication : Jean Pepper</li>
+                </ul>
             </div>
             <div class="hebergement">
-                <h4>2. Hébergement</h4>
-                    <p>Le site est hébergé par :</p>
-                    <p>Nom de l'hébergeur : OVH</p>
-                    <p>Adresse de l'hébergeur : 2 Rue Kellermann, 59100 Roubaix, France</p>
-                    <p>Numéro de téléphone : 09 72 10 10 07</p>
-                    <p>Email : support@ovh.com</p>
+                <ul class="list"><strong>2. Hébergement</strong>
+                    <li>Le site est hébergé par :</li>
+                    <li>Nom de l'hébergeur : OVH</li>
+                    <li>Adresse de l'hébergeur : 2 Rue Kellermann, 59100 Roubaix, France</li>
+                    <li>Numéro de téléphone : 09 72 10 10 07</li>
+                    <li>Email : support@ovh.com</li>
+                </ul>
             </div>
         </div>
     </section>
@@ -69,25 +71,31 @@
     <section id="privacy" class="privacy">
         <div class="privacy-content">
             <h3 class="decorated">Politique de Confidentialité</h3>
-            <h4>1. Collecte des Informations</h4>
-            <p>Nous collectons des informations personnelles telles que votre nom, adresse e-mail, et adresse de livraison lorsque vous utilisez notre site. Ces informations sont nécessaires pour traiter vos commandes et répondre à vos demandes.</p>
-
-            <h4>2. Utilisation des Informations</h4>
-            <p>Les informations collectées sont utilisées pour :</p>
-            <ul>
-                <li>Traiter vos commandes.</li>
-                <li>Vous fournir un service client.</li>
-                <li>Vous envoyer des offres ou des informations, si vous y avez consenti.</li>
+            <ul class="list"><strong>1. Collecte des Informations</strong>
+                <p>Nous collectons des informations personnelles telles que votre nom, adresse e-mail, et adresse de livraison lorsque vous utilisez notre site. Ces informations sont nécessaires pour traiter vos commandes et répondre à vos demandes.</p>
+            </ul>
+            
+            <ul class="list"><strong>2. Utilisation des Informations</strong>
+                <p>Les informations collectées sont utilisées pour :</p>           
+                <ul>
+                    <li>Traiter vos commandes.</li>
+                    <li>Vous fournir un service client.</li>
+                    <li>Vous envoyer des offres ou des informations, si vous y avez consenti.</li>
+                </ul>
             </ul>
 
-            <h4>3. Protection des Données</h4>
-            <p>Nous mettons en place des mesures de sécurité pour protéger vos données personnelles contre tout accès non autorisé.</p>
+            <ul class="list"><strong>3. Protection des Données</strong>
+                <p>Nous mettons en place des mesures de sécurité pour protéger vos données personnelles contre tout accès non autorisé.</p>
+            </ul>
 
-            <h4>4. Cookies</h4>
-            <p>Nous utilisons des cookies pour améliorer votre expérience de navigation. Vous pouvez désactiver les cookies dans les paramètres de votre navigateur.</p>
+            <ul class="list"><strong>4. Cookies</strong>
+                <p>Nous utilisons des cookies pour améliorer votre expérience de navigation. Vous pouvez désactiver les cookies dans les paramètres de votre navigateur.</p>
+            </ul>
 
-            <h4>5. Vos Droits</h4>
-            <p>Vous avez le droit d’accéder, de modifier ou de supprimer vos données personnelles en nous contactant directement.</p>
-        </div>
+            <ul class="list"><strong>5. Vos Droits</strong>
+                <p>Vous avez le droit d’accéder, de modifier ou de supprimer vos données personnelles en nous contactant directement.</p>
+        </ul>
+            </div>
     </section>
+</main>
 <%- include('partials/footer') %>

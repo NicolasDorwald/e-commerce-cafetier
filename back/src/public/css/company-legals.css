@@ -1,0 +1,49 @@
+.company , .skills , .cgv , .legals , .privacy {
+    display: flex;
+    flex-direction: column;
+    padding: 3rem;
+    width: 100%;
+    margin: auto;
+    background-color: rgba(244, 240, 240, 0.906);
+    border-radius: 10px;
+}
+
+.company-page , .legals-page {
+    background-image: url("/images/background.png"); /* même image que le header */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* effet élégant desktop */
+    padding: 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.cgv-content , .legals-content , .privacy-content {
+    max-width: 800px;
+    margin: auto;
+    padding: 1rem;
+    gap: 15px;
+}
+
+.edit h4 , .hebergement h4 , .privacy-content h4 {
+    border: none;
+    text-align: left;
+}
+
+.legals-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: auto;
+}
+
+.edit , .hebergement {
+    width: 50%;
+    padding: 0;
+}
+
+.cgv-content strong {
+    display: block;
+    margin-top: 1rem;
+}

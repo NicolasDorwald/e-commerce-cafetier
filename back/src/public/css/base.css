@@ -1,10 +1,9 @@
 @import url('reset.css');
 @import url('header-footer.css');
 @import url('home.css');
-@import url('company.css');
+@import url('company-legals.css');
 @import url('contact.css');
 @import url('catalog.css');
-@import url('legals.css');
 @import url('responsive.css');
 
 /*---- variables ----*/
