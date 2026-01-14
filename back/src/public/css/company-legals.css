@@ -1,12 +1,16 @@
 .company , .skills , .cgv , .legals , .privacy {
     display: flex;
     flex-direction: column;
-    padding: 3rem;
+    padding: 1rem 3rem;
     width: 100%;
     margin: auto;
     background-color: rgba(244, 240, 240, 0.906);
     border-radius: 10px;
 }
+
+.company {
+    padding: 3rem;
+} 
 
 .company-page , .legals-page {
     background-image: url("/images/background.png"); /* même image que le header */
@@ -36,6 +40,7 @@
     flex-direction: row;
     justify-content: center;
     margin: auto;
+    gap: 2rem;
 }
 
 .edit , .hebergement {
@@ -43,7 +48,7 @@
     padding: 0;
 }
 
-.cgv-content strong {
+.cgv-content strong , .edit strong , .hebergement strong , .privacy-content strong {
     display: block;
     margin-top: 1rem;
 }
