@@ -9,8 +9,18 @@
 }
 
 .company {
-    padding: 3rem;
+    padding: 1rem 3rem;
 } 
+
+.family , .local {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.skills {
+    gap: 1rem;
+}
 
 .company-page , .legals-page {
     background-image: url("/images/background.png"); /* même image que le header */
