@@ -63,6 +63,48 @@
     }     
 }
 
+/* =========================
+   Responsive Mobile
+   ========================= */
+@media (max-width: 600px) {
+  .cart-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .cart-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* info | actions */
+    gap: 10px;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+  }
+
+  /* Informations principales (nom, prix) à gauche */
+  .cart-row .cart-cell:first-child,
+  .cart-row .cart-cell:nth-child(2) {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  /* Actions (quantité + bouton supprimer) à droite */
+  .cart-row .cart-cell:nth-child(3),
+  .cart-row .cart-cell:nth-child(5) {
+    justify-content: flex-end;
+  }
+
+  .cart-cell button {
+    padding: 4px 10px;
+  }
+
+  .cart-total {
+    text-align: right;
+    margin-top: 10px;
+    font-size: 1.1em;
+  }
+}
+
 @media (max-width: 450px) {
     .home-presentation .description {
         gap: 0.5rem;

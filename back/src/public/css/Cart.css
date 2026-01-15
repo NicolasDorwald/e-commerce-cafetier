@@ -1,17 +1,19 @@
-/* Cart.css */
+/* =========================
+   Cart.css
+   ========================= */
 
 /* Container du panier */
 .cart-container {
   max-width: 800px;
   margin: 20px auto;
-  padding: 15px;
+  padding: 20px;
   border: 1px solid #ddd;
-  border-radius: 8px;
-  background-color: #fefefe;
+  border-radius: 10px;
+  background-color: #fdfcf9;
   font-family: Arial, sans-serif;
 }
 
-/* Grid du panier */
+/* Desktop : grid du panier */
 .cart-grid {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr 1fr; /* nom | prix | quantité | total | supprimer */
@@ -21,7 +23,7 @@
 
 /* Chaque ligne du panier */
 .cart-row {
-  display: contents; /* permet à chaque cellule de suivre la grid */
+  display: contents; /* pour que chaque cellule suive la grid */
   border-bottom: 1px solid #ddd;
   padding: 10px 0;
 }
@@ -36,12 +38,12 @@
 
 /* Quantité */
 .quantity {
-  min-width: 20px;
+  min-width: 25px;
   text-align: center;
   display: inline-block;
 }
 
-/* Boutons de quantité */
+/* Boutons + et - */
 .cart-cell button {
   padding: 3px 8px;
   border: 1px solid #aaa;
@@ -55,10 +57,10 @@
   cursor: not-allowed;
 }
 
-/* Bouton supprimer (marron) */
-.btn-remove {
+/* Bouton Supprimer */
+.cart-cell > .btn-remove {
   padding: 5px 10px;
-  background-color: #8B4513; /* marron */
+  background-color: #5a3e36;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -66,22 +68,22 @@
 }
 
 .btn-remove:hover {
-  background-color: #5c2c0d; /* marron foncé au hover */
+  background-color: #6e5442; /* marron foncé */
 }
 
 /* Total général */
 .cart-total {
   grid-column: 1 / -1; /* occupe toute la largeur */
   text-align: right;
-  margin-top: 10px;
+  margin-top: 15px;
   font-weight: bold;
-  font-size: 1.1em;
+  font-size: 1.2em;
 }
 
-/* Bouton payer */
+/* Bouton Payer */
 .btn-pay {
   margin-top: 15px;
-  padding: 10px 20px;
+  padding: 12px 25px;
   background-color: #5a3e36;
   color: #fff;
   border: none;
@@ -93,8 +95,4 @@
 .btn-pay:disabled {
   opacity: 0.5;
   cursor: not-allowed;
-}
-
-.cart-cell > .btn-remove {
-    background-color: #5c2c0d;
 }
