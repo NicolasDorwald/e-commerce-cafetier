@@ -82,3 +82,10 @@ p {
 .hidden {
   display: none;
 }
+
+/* --- café pas dispo --*/
+.btn-link.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none; /* bloque le clic */
+}

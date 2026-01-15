@@ -1,57 +1,106 @@
 import React, { useEffect, useState } from "react";
-import './Cart.css';
+
 
 export default function Cart() {
-    // State pour stocker le panier
-    const [cartItems, setCartItems] = useState([]);
+  // ---------------------------
+  // State pour stocker le panier
+  // ---------------------------
+  const [cartItems, setCartItems] = useState([]);
 
-    // Lire localStorage au chargement du composant
-    useEffect(() => {
-        const savedCart = JSON.parse(localStorage.getItem("cart")) || [];
-        setCartItems(savedCart);
-    }, []);
+  // ----------------------------------------
+  // Charger le panier depuis le localStorage
+  // au chargement du composant
+  // ----------------------------------------
+  useEffect(() => {
+    const savedCart = JSON.parse(localStorage.getItem("cart")) || [];
+    setCartItems(savedCart);
+  }, []);
 
-    // Calculer le total
-    const total = cartItems.reduce(
-        (sum, item) => sum + item.price * item.quantity,
-        0
-    );
+  // ----------------------------------------
+  // Mettre à jour le panier (state + localStorage)
+  // ----------------------------------------
+  const updateCart = (newCart) => {
+    setCartItems(newCart);
+    localStorage.setItem("cart", JSON.stringify(newCart));
+  };
 
-    return (
-        <div className="cart-container">
-        {cartItems.length === 0 ? (
-            <p>Votre panier est vide.</p>
-        ) : (
-            <table className="cart-table">
-            <thead>
-                <tr>
-                <th>Produit</th>
-                <th>Prix (€)</th>
-                <th>Quantité</th>
-                <th>Total (€)</th>
-                </tr>
-            </thead>
-            <tbody>
-                {cartItems.map((item) => (
-                <tr key={item.id}>
-                    <td>{item.name}</td>
-                    <td>{item.price.toFixed(2)}</td>
-                    <td>{item.quantity}</td>
-                    <td>{(item.price * item.quantity).toFixed(2)}</td>
-                </tr>
-                ))}
-            </tbody>
-            <tfoot>
-                <tr>
-                <td colSpan="3"><strong>Total général</strong></td>
-                <td><strong>{total.toFixed(2)}</strong></td>
-                </tr>
-            </tfoot>
-            </table>
-        )}
-        <button className="btn-pay" disabled>
-            Payer
-        </button>
+  // ----------------------------------------
+  // Modifier la quantité d’un produit
+  // ----------------------------------------
+  const updateQuantity = (id, quantity) => {
+    if (quantity < 1) return; // on ne peut pas mettre moins de 1
+    const newCart = cartItems.map(item => {
+      if (item.id === id) {
+        return { ...item, quantity: Number(quantity) };
+      }
+      return item;
+    });
+    updateCart(newCart);
+  };
+
+  // ----------------------------------------
+  // Supprimer un produit du panier
+  // ----------------------------------------
+  const handleRemove = (id) => {
+    const newCart = cartItems.filter(item => item.id !== id);
+    updateCart(newCart);
+  };
+
+  // ----------------------------------------
+  // Calculer le total du panier
+  // ----------------------------------------
+  const total = cartItems.reduce(
+    (sum, item) => sum + item.price * item.quantity,
+    0
+  );
+
+  // ----------------------------------------
+  // Rendu JSX
+  // ----------------------------------------
+  return (
+    <div className="cart-container">
+      {cartItems.length === 0 ? (
+        <p>Votre panier est vide.</p>
+      ) : (
+        <div className="cart-grid">
+          {cartItems.map(item => (
+            <div className="cart-row" key={item.id}>
+              {/* Nom du produit */}
+              <div className="cart-cell">{item.name}</div>
+
+              {/* Prix unitaire */}
+              <div className="cart-cell">{item.price.toFixed(2)} €</div>
+
+              {/* Quantité modifiable */}
+              <div className="cart-cell">
+                <button onClick={() => updateQuantity(item.id, item.quantity - 1)} disabled={item.quantity <= 1}>-</button>
+                <span className="quantity">{item.quantity}</span>
+                <button onClick={() => updateQuantity(item.id, item.quantity + 1)}>+</button>
+              </div>
+
+              {/* Total par produit */}
+              <div className="cart-cell">{(item.price * item.quantity).toFixed(2)} €</div>
+
+              {/* Bouton supprimer */}
+              <div className="cart-cell">
+                <button onClick={() => handleRemove(item.id)} className="btn-remove">
+                  Supprimer
+                </button>
+              </div>
+            </div>
+          ))}
+
+          {/* Total général */}
+          <div className="cart-total">
+            Total : {total.toFixed(2)} €
+          </div>
         </div>
-    );
+      )}
+
+      {/* Bouton payer */}
+      <button className="btn-pay" disabled={cartItems.length === 0}>
+        Payer
+      </button>
+    </div>
+  );
 }

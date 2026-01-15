@@ -31,14 +31,14 @@
                             <li><strong>Origine:</strong> <%= coffee.origin %></li>
                             <li><strong>Prix au kilo:</strong> <%= coffee.price %> €</li>
                             <li><strong>Goût:</strong> <%= coffee.taste %></li>
-                            <li><strong>Disponibilité:</strong> <%= coffee.dispo ? 'Oui' : 'Non' %></li>
+                            <li><strong>Disponibilité:</strong> <%= coffee.availability ? 'Oui' : 'Non' %></li>
                         </ul>
                         
-                        <a href="#" class="btn-link add-to-cart" data-id="<%= coffee.id %>"
-                            data-name="<%= coffee.name %>" data-price="<%= coffee.price %>">
-                        Ajouter au panier
+                        <a href="#" class="btn-link add-to-cart <%= !coffee.availability ? 'disabled' : '' %>"
+                            data-id="<%= coffee.id %>" data-name="<%= coffee.name %>"
+                            data-price="<%= coffee.price %>"<%= !coffee.availability ? 'onclick="return false;"' : '' %>>
+                            Ajouter au panier
                         </a>
-
                     </article>
                 <% }); %>                   
             </div>
