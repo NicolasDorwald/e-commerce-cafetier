@@ -1,46 +1,46 @@
 <%- include('partials/header') %>
 
-    <main>
-        <section class="catalog-page">
-            <h3 class="decorated">Notre Catalogue</h3>
-                <div class="category">
-                    <label for="category">Trier par : </label>
-                    <select id="category" name="category" onchange="window.location.href='?sort=' + this.value;">
-                        <option value="" <%= (!sort) ? 'selected' : '' %>>Ordre alphabétique</option>
-                        <option value="asc" <%= (sort === 'asc') ? 'selected' : '' %>>Prix croissant</option>
-                        <option value="desc" <%= (sort === 'desc') ? 'selected' : '' %>>Prix décroissant</option>
-                    </select>
-                </div>
-            <% if (coffeesList.length === 0) { %>
-                <p class="fallback-message">Aucun produit disponible pour le moment.</p>
-            <% } else { %>
-                <div class="products">
-                    <% coffeesList.forEach(coffee => { %> 
-                        <article class="product" data-price="<%= coffee.price %>">
-                            
-                            <div class="product-image">
-                                <img src="/images/coffees/<%= coffee.reference %>.png" alt="Image de <%= coffee.name %>">
-                            </div>
+<main>
+    <section class="catalog-page">
+        <h3 class="decorated">Notre Catalogue</h3>
+            <div class="category">
+                <label for="category">Trier par : </label>
+                <select id="category" name="category" onchange="window.location.href='?sort=' + this.value;">
+                    <option value="" <%= (!sort) ? 'selected' : '' %>>Ordre alphabétique</option>
+                    <option value="asc" <%= (sort === 'asc') ? 'selected' : '' %>>Prix croissant</option>
+                    <option value="desc" <%= (sort === 'desc') ? 'selected' : '' %>>Prix décroissant</option>
+                </select>
+            </div>
+        <% if (coffeesList.length === 0) { %>
+            <p class="fallback-message">Aucun produit disponible pour le moment.</p>
+        <% } else { %>
+            <div class="products">
+                <% coffeesList.forEach(coffee => { %> 
+                    <article class="product" data-price="<%= coffee.price %>">
+                        
+                        <div class="product-image">
+                            <img src="/images/coffees/<%= coffee.reference %>.png" alt="Image de <%= coffee.name %>">
+                        </div>
 
-                            <div class="product-content">
-                                <h4><%= coffee.name %></h4>
-                                <p><%= coffee.description %></p>
-                            </div>
-                            
-                            <ul>
-                                <li><strong>Origine:</strong> <%= coffee.origin %></li>
-                                <li><strong>Prix au kilo:</strong> <%= coffee.price %> €</li>
-                                <li><strong>Goût:</strong> <%= coffee.taste %></li>
-                                <li><strong>Disponibilité:</strong> <%= coffee.dispo ? 'Oui' : 'Non' %></li>
-                            </ul>
-                            
-                            <a href="#" class="btn-link">Ajouter au panier</a>
-                        </article>
-                    <% }); %>                   
-                </div>
-            <% } %>
-            <a class="display--all--link" href="./catalog" class="btn-link">Voir tout</a>
-        </section>
-    </main>
+                        <div class="product-content">
+                            <h4><%= coffee.name %></h4>
+                            <p><%= coffee.description %></p>
+                        </div>
+                        
+                        <ul>
+                            <li><strong>Origine:</strong> <%= coffee.origin %></li>
+                            <li><strong>Prix au kilo:</strong> <%= coffee.price %> €</li>
+                            <li><strong>Goût:</strong> <%= coffee.taste %></li>
+                            <li><strong>Disponibilité:</strong> <%= coffee.dispo ? 'Oui' : 'Non' %></li>
+                        </ul>
+                        
+                        <a href="#" class="btn-link">Ajouter au panier</a>
+                    </article>
+                <% }); %>                   
+            </div>
+        <% } %>
+        <a class="display--all--link" href="./catalog" class="btn-link">Voir tout</a>
+    </section>
+</main>
 
 <%- include('partials/footer') %>
