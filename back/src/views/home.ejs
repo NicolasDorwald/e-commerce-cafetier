@@ -32,7 +32,11 @@
                             <p><%= coffee.description %></p>
                         </div>
                         
-                        <a href="#" class="btn-link">Ajouter au panier</a>             
+                        <a href="#" class="btn-link add-to-cart" data-id="<%= coffee.id %>"
+                            data-name="<%= coffee.name %>" data-price="<%= coffee.price %>">
+                        Ajouter au panier
+                        </a>
+                                   
                     </article>
                 <% }); %>
             <% } %>
