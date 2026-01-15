@@ -17,10 +17,14 @@ router.get("/contact", (req, res) => {
 
 router.get("/legals", (req, res) => {
     res.render("legals");});
-
 // router.post('/contact', (req, res) => {
 //     récupérer req.body et envoyer un email en local, Formspree fait le job mantenant
 // });
+
+router.get('/cart', (req, res) => {
+  res.render('cart');
+});
+
 
 router.use((req, res) => {
     res.status(404).render('error', { message: "Page non trouvée" });
