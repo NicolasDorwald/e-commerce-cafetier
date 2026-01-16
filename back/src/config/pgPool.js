@@ -9,7 +9,7 @@ const { Pool } = pg;
 const isProduction = process.env.NODE_ENV === "production";
 
 const connectionString = isProduction
-  ? process.env.DATABASE_URL   // sur Render
+  ? process.env.DATABASE_URL   // sur Render - Neon
   : process.env.LOCAL_PG_URL;  // en local, dans ton .env
 
 if (!connectionString) {
